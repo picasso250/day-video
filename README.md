@@ -3,6 +3,11 @@ day-video
 
 Record you action per day to an hour video and watch it.
 
+Important
+-------------
+
+I will cost large disk space, about 1G per hour.
+
 How to use
 -------------
 
