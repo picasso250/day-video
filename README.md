@@ -1,26 +1,26 @@
 day-video
 =========
 
-record you action per day and watch it
+Record you action per day to an hour video and watch it.
 
-how to use
+How to use
 -------------
 
-first, run record.py to record screen.
+First, run record.py to record screen.
 
 ```bash
 python record.py
 ```
 
-press Control-C to stop recording.
+Press Control-C to stop recording.
 
-then use export.sh to export to video.
+Then use export.sh to export to video.
 
 ```bash
 bash export.sh
 ```
 
-dependency
------------
+Dependencies
+-------------
 
 - mencoder
