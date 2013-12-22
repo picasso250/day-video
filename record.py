@@ -1,3 +1,5 @@
+# todo caught C-c signal
+
 import gtk.gdk
 import time, os
 
