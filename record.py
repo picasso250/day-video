@@ -1,4 +1,5 @@
-# todo caught C-c signal
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import gtk.gdk
 import time, os, signal, sys
