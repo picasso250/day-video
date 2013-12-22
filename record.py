@@ -1,7 +1,17 @@
 # todo caught C-c signal
 
 import gtk.gdk
-import time, os
+import time, os, signal, sys
+
+t = time.time()
+
+def handler(signum, frame):
+    dt = time.time() - t;
+    print
+    print 'Record '+str(int(dt))+' seconds'
+    sys.exit()
+
+signal.signal(signal.SIGINT, handler)
 
 def screenshot(filename):
     w = gtk.gdk.get_default_root_window()
@@ -13,7 +23,6 @@ def screenshot(filename):
         print "Screenshot saved to "+filename+".png."
     else:
         print "Unable to get the screenshot."
-
 
 screenshots_root = 'screenshots'
 if not os.path.exists(screenshots_root):
