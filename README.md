@@ -8,7 +8,7 @@ Record you action per day to an hour video and watch it.
 Important
 -------------
 
-I will cost large disk space, about 0.5G per hour.
+It cost disk space, about 0.5G per hour.
 
 How to use
 -------------
