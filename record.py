@@ -37,12 +37,11 @@ def screenshot(filename): # 截屏
         f = open(filename+'.png', 'r')
         m.update(f.read())
         digest = m.digest()
-        print m.digest()
         f.close()
 
         if digest == old_digest:
-            print 'the same with old'
-            # rm
+            print 'the same with old, skip'
+            os.unlink(filename+'.png')
         old_digest = digest
 
     else:
