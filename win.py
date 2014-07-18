@@ -19,10 +19,7 @@ def handler(signum, frame):
 
 signal.signal(signal.SIGINT, handler)
 
-
-
-import time
-import os, win32gui, win32ui, win32con, win32api  
+import win32gui, win32ui, win32con, win32api
     
 def window_capture(dpath):
     
@@ -43,4 +40,5 @@ def window_capture(dpath):
     saveDC.BitBlt((0,0),(w, h) , mfcDC, (0,0), win32con.SRCCOPY)  
     cc=time.gmtime()  
     bmpname=str(cc[0])+str(cc[1])+str(cc[2])+str(cc[3]+8)+str(cc[4])+str(cc[5])+'.bmp'
+    print(bmpname)
     saveBitMap.SaveBitmapFile(saveDC, dpath+bmpname)
