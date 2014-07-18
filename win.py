@@ -12,15 +12,15 @@ def window_capture(dpath):
     # 返回图片文件名,文件名格式:日期.jpg 如:2009328224853.jpg 
     
     hwnd = 0 
-    hwndDC = win32gui.GetWindowDC(hwnd)   
-    mfcDC=win32ui.CreateDCFromHandle(hwndDC)   
-    saveDC=mfcDC.CreateCompatibleDC()   
-    saveBitMap = win32ui.CreateBitmap()   
-    MoniterDev=win32api.EnumDisplayMonitors(None,None)  
+    hwndDC = win32gui.GetWindowDC(hwnd)
+    mfcDC=win32ui.CreateDCFromHandle(hwndDC)
+    saveDC=mfcDC.CreateCompatibleDC()
+    saveBitMap = win32ui.CreateBitmap()
+    MoniterDev=win32api.EnumDisplayMonitors(None,None)
     w = MoniterDev[0][2][2]  
     h = MoniterDev[0][2][3]  
     #print w,h　　　＃图片大小  
-    saveBitMap.CreateCompatibleBitmap(mfcDC, w, h)   
+    saveBitMap.CreateCompatibleBitmap(mfcDC, w, h)
     saveDC.SelectObject(saveBitMap)   
     saveDC.BitBlt((0,0),(w, h) , mfcDC, (0,0), win32con.SRCCOPY)  
     cc=time.gmtime()  
