@@ -29,7 +29,7 @@ else:
         path = path + str(time.time())
         linux.screenshot(path)
 
-interval = 200
+interval = 2
 
 screenshots_root = 'screenshots'
 if not os.path.exists(screenshots_root):
