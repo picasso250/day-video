@@ -44,7 +44,3 @@ def window_capture(dpath):
     cc=time.gmtime()  
     bmpname=str(cc[0])+str(cc[1])+str(cc[2])+str(cc[3]+8)+str(cc[4])+str(cc[5])+'.bmp'
     saveBitMap.SaveBitmapFile(saveDC, dpath+bmpname)
-
-
-#调用截屏函数      
-window_capture('d:\\')
