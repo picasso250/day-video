@@ -37,16 +37,14 @@ def window_capture(dpath):
         i = 0
         for m in MoniterDev:
             x, y = m[2][0], m[2][1]
-            w = m[2][2]
-            h = m[2][3]
-            print x,y,w,h # 图片大小  
+            w = m[2][2] - x
+            h = m[2][3] - y
             saveBitMap.CreateCompatibleBitmap(mfcDC, w, h)
-            saveDC.SelectObject(saveBitMap)   
-            saveDC.BitBlt((x,y),(w, h) , mfcDC, (0,0), win32con.SRCCOPY)
+            saveDC.SelectObject(saveBitMap)
+            print x,y,w,h # 图片大小  
+            saveDC.BitBlt((0,0), (w, h), mfcDC, (x,y), win32con.SRCCOPY)
             cc=time.gmtime()
             bmpname= str(i)+'-'+str(cc[0])+str(cc[1])+str(cc[2])+str(cc[3]+8)+str(cc[4])+str(cc[5])+'.bmp'
             print(bmpname)
             saveBitMap.SaveBitmapFile(saveDC, dpath+bmpname)
             i += 1
-
-
