@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 import time, os, signal, sys
 
 t = time.time()
@@ -27,14 +26,15 @@ if os.name == 'nt':
 else:
     import linux
     def screenshot(path):
+        path = path + str(time.time())
         linux.screenshot(path)
 
-interval = 2
+interval = 200
 
 screenshots_root = 'screenshots'
 if not os.path.exists(screenshots_root):
     os.mkdir(screenshots_root)
 while True:
-    screenshot(screenshots_root+'/'+str(time.time()))
+    screenshot(screenshots_root+'/')
     time.sleep(interval)
 
