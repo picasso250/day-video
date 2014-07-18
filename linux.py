@@ -5,23 +5,6 @@ import gtk.gdk
 import time, os, signal, sys
 import hashlib
 
-interval = 2
-
-t = time.time()
-
-def handler(signum, frame):
-    dt = time.time() - t;
-    if dt < 60:
-        dt = str(int(dt))+' seconds'
-    else:
-        dt = int(dt)
-        dt = str(int(dt/60))+' min '+ str(dt%60)+' sec'
-    print
-    print 'Record '+dt
-    sys.exit()
-
-signal.signal(signal.SIGINT, handler)
-
 w = gtk.gdk.get_default_root_window()
 sz = w.get_size()
 old_digest = None
