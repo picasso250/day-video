@@ -26,7 +26,7 @@ def window_capture(dpath):
         h = MoniterDev[0][2][3]
         #print w,h　　　＃图片大小  
         saveBitMap.CreateCompatibleBitmap(mfcDC, w, h)
-        saveDC.SelectObject(saveBitMap)   
+        saveDC.SelectObject(saveBitMap)
         saveDC.BitBlt((0,0),(w, h) , mfcDC, (0,0), win32con.SRCCOPY)
         cc=time.gmtime()
         bmpname=str(cc[0])+str(cc[1])+str(cc[2])+str(cc[3]+8)+str(cc[4])+str(cc[5])+'.bmp'
